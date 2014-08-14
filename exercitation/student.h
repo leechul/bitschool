@@ -14,5 +14,5 @@ typedef struct student{
 
 int student_print(int idx);
 int student_init(int idx);
-
+void print_input_message();
 Student students[100];

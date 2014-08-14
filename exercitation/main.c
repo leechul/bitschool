@@ -11,4 +11,6 @@ int main ()
         student_init(i);
         student_print(i);
     }
+
+    print_input_message();
 }
