@@ -7,6 +7,7 @@ typedef struct student{
     int     mKorean;
     int     mEnglish;
     int     mMath;
+    int     mSum;
     int     mAverage;
     char    mLevel;
     int     mIsUsed;
@@ -15,4 +16,9 @@ typedef struct student{
 int student_print(int idx);
 int student_init(int idx);
 void print_input_message();
+int getStudent();
+int setStudent(int idx, int num, char* name, int korean, int english, int math);
+int sum(int a, int b, int c);
+int average(int a, int b, int c);
+char level(int a);
 Student students[100];

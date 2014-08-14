@@ -10,6 +10,7 @@ int student_init(int idx)
     students[idx].mKorean = 0;
     students[idx].mEnglish = 0;
     students[idx].mMath = 0;
+    students[idx].mSum = 0;
     students[idx].mAverage = 0;
     students[idx].mLevel = 'F';
     students[idx].mIsUsed = 0;
@@ -17,10 +18,37 @@ int student_init(int idx)
 
 int student_print(int idx)
 {
-    printf("[mIdx=%d][mNum=%d][mName=%s][mKorean=%d][mEnglish=%d][mMath=%d][mAverage=%d][mLevel=%c][mIsUsed=%d]\n",
-    students[idx].mIdx,students[idx].mNum,students[idx].mName,students[idx].mKorean,students[idx].mEnglish,students[idx].mMath,students[idx].mAverage,students[idx].mLevel,students[idx].mIsUsed);
+    printf("[mIdx=%d][mNum=%d][mName=%s][mKorean=%d][mEnglish=%d][mMath=%d][mSum=%d][mAverage=%d][mLevel=%c][mIsUsed=%d]\n",
+    students[idx].mIdx,students[idx].mNum,students[idx].mName,students[idx].mKorean,students[idx].mEnglish,students[idx].mMath,students[idx].mSum,students[idx].mAverage,students[idx].mLevel,students[idx].mIsUsed);
 
 }
+
+int getStudent()
+{
+    int i;
+    for ( i = 0; i < 100; i++)
+    {
+        if ( students[i].mIsUsed == 0 )
+        {
+            students[i].mIsUsed = 1;
+            return i;
+        }
+    }
+    printf(" student is full ");
+}
+
+int setStudent(int idx, int num, char* name, int korean, int english, int math)
+{
+    students[idx].mNum = num;
+    strcpy( students[idx].mName, name);
+    students[idx].mKorean = korean;
+    students[idx].mEnglish = english;
+    students[idx].mMath = math;
+    students[idx].mSum = sum(korean, english, math);
+    students[idx].mAverage = average(korean, english, math);
+    students[idx].mLevel = level( students[idx].mAverage );
+}
+
 
 int sum(int a, int b, int c)
 {
@@ -48,6 +76,8 @@ char level( int a )
 		return '?';
 	     }
 }
+
+
 
 void print_input_message()
 {
