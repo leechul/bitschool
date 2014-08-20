@@ -21,4 +21,7 @@ int setStudent(int idx, int num, char* name, int korean, int english, int math);
 int sum(int a, int b, int c);
 int average(int a, int b, int c);
 char level(int a);
+void print_output_message();
+void sort_students();
+void print_line();
 Student students[100];

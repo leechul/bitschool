@@ -18,8 +18,10 @@ int student_init(int idx)
 
 int student_print(int idx)
 {
-    printf("[mIdx=%d][mNum=%d][mName=%s][mKorean=%d][mEnglish=%d][mMath=%d][mSum=%d][mAverage=%d][mLevel=%c][mIsUsed=%d]\n",
-    students[idx].mIdx,students[idx].mNum,students[idx].mName,students[idx].mKorean,students[idx].mEnglish,students[idx].mMath,students[idx].mSum,students[idx].mAverage,students[idx].mLevel,students[idx].mIsUsed);
+    //printf("[mIdx=%d][mNum=%d][mName=%s][mKorean=%d][mEnglish=%d][mMath=%d][mSum=%d][mAverage=%d][mLevel=%c][mIsUsed=%d]\n",
+    //students[idx].mIdx,students[idx].mNum,students[idx].mName,students[idx].mKorean,students[idx].mEnglish,students[idx].mMath,students[idx].mSum,students[idx].mAverage,students[idx].mLevel,students[idx].mIsUsed);
+    printf("%d\t%s\t%d\t%d\t%d\t%d\t%d\t%c\n",
+    students[idx].mNum,students[idx].mName,students[idx].mKorean,students[idx].mEnglish,students[idx].mMath,students[idx].mSum,students[idx].mAverage,students[idx].mLevel,students[idx].mIsUsed);
 
 }
 
@@ -34,7 +36,7 @@ int getStudent()
             return i;
         }
     }
-    printf(" student is full ");
+    printf(" students are full ");
 }
 
 int setStudent(int idx, int num, char* name, int korean, int english, int math)
@@ -77,9 +79,48 @@ char level( int a )
 	     }
 }
 
+void sort_students()
+{
+    int i, j;
+    Student tmp;
+    for (i = 0 ; i < 100-1 ; i++)
+    {
+        for (j = 0 ; j < 100-1; j++)
+        {
+            if (students[j].mIsUsed == 1 && students[j+1].mIsUsed ==1)
+            {
+            if (students[j].mNum > students[j+1].mNum)
+            {
+                //printf(" if start ");
+                //tmp = students[j];
+                //students[j] = students[j+1];
+                //students[j+1] = tmp;
+                memcpy(&tmp, &students[j], sizeof(Student));
+                memcpy(&students[j], &students[j+1], sizeof(Student));
+                students[j].mIdx = j;
+                memcpy(&students[j+1], &tmp,sizeof(Student));
+                students[j+1].mIdx = j+1;
+            }
+            }
+        }
+    }
+}
+
+
 
 
 void print_input_message()
 {
-    printf("************************************************************************************************\n****            정보를 입력 하여 주세요                                                     ****\n*********번호***********이름***********국어**********영어*********수학**************************\n");
+    print_line();
+    printf("정보를 입력하여 주세요\n");
+    print_line();
+    printf("번호\t이름 국어 영어 수학\n");
+}
+void print_output_message()
+{
+    printf("번호\t이름\t국어\t영어\t수학\t총점\t평균\t등급\n");
+}
+void print_line()
+{
+    printf("*************************************************************\n");
 }
