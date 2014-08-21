@@ -26,8 +26,6 @@ int main ()
     student_print(1);
     student_print(2);
     student_print(3);
-    print_line();
-
 }
 
 int getInfo()

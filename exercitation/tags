@@ -1,0 +1,38 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	Makefile	/^CC=gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-c$/;"	m
+EXECUTABLE	Makefile	/^EXECUTABLE=student$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS=$/;"	m
+OBJECTS	Makefile	/^OBJECTS=$(SOURCES:.c=.o)$/;"	m
+SOURCES	Makefile	/^SOURCES=main.c student.c$/;"	m
+Student	student.h	/^}Student;$/;"	t	typeref:struct:student
+average	student.c	/^int average(int a, int b, int c)$/;"	f
+getInfo	main.c	/^int getInfo()$/;"	f
+getStudent	student.c	/^int getStudent()$/;"	f
+level	student.c	/^char level( int a )$/;"	f
+mAverage	student.h	/^    int     mAverage;$/;"	m	struct:student
+mEnglish	student.h	/^    int     mEnglish;$/;"	m	struct:student
+mIdx	student.h	/^    int     mIdx;$/;"	m	struct:student
+mIsUsed	student.h	/^    int     mIsUsed;$/;"	m	struct:student
+mKorean	student.h	/^    int     mKorean;$/;"	m	struct:student
+mLevel	student.h	/^    char    mLevel;$/;"	m	struct:student
+mMath	student.h	/^    int     mMath;$/;"	m	struct:student
+mName	student.h	/^    char    mName[20];$/;"	m	struct:student
+mNum	student.h	/^    int     mNum;$/;"	m	struct:student
+mSum	student.h	/^    int     mSum;$/;"	m	struct:student
+main	main.c	/^int main ()$/;"	f
+print_input_message	student.c	/^void print_input_message()$/;"	f
+print_line	student.c	/^void print_line()$/;"	f
+print_output_message	student.c	/^void print_output_message()$/;"	f
+setStudent	student.c	/^int setStudent(int idx, int num, char* name, int korean, int english, int math)$/;"	f
+sort_students	student.c	/^void sort_students()$/;"	f
+student	student.h	/^typedef struct student{$/;"	s
+student_init	student.c	/^int student_init(int idx)$/;"	f
+student_print	student.c	/^int student_print(int idx)$/;"	f
+students	student.h	/^Student students[100];$/;"	v
+sum	student.c	/^int sum(int a, int b, int c)$/;"	f
