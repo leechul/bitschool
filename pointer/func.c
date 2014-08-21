@@ -21,6 +21,24 @@ void TestArrayDoublePointer()
     }
 }
 
+void TestArrayPointer()
+{
+    int array[4] = { 1,2,3,4 };
+    int i;
+
+    int *pArray = array;
+
+    for( i=0; i<4; i++)
+    {
+        printf("array[%d] = %d\n",i,array[i]);
+    }
+
+    for ( i=0; i<4; i++)
+    {
+        printf("*(array+%d) = %d\n",i, *(array+i));
+    }
+}
+
 void Test2DArrayPointer()
 {
     int array2d[3][4] = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
@@ -65,5 +83,45 @@ void Test3DArrayPointer()
                 printf("*(*(*(pArray3d+%d)+%d)+%d) = %d\n",i,j,k,*(*(*(pArray3d+i)+j)+k));
             }
         }
+    }
+}
+
+void TestStringArrayPointer()
+{
+    char strArray[4] = "ABC";
+    
+    int i;
+
+    char *pStrArray = strArray;
+
+    for(i=0; strArray[i] != '\0'; i++)
+    {
+        printf("array[%d] = %c\n",i,strArray[i]);
+    }
+
+    for(i=0; *(pStrArray+i) != '\0'; i++)
+    {
+        printf("*(pStrArray+%d) = %c\n",i,*(pStrArray+i));
+    }
+}
+
+void TestStringArrayDoublePointer()
+{
+    char *strArray[3] = {
+        "ABC","DEFG","OK"
+    };
+
+    int i;
+
+    char **pStrArray = strArray;
+
+    for ( i = 0 ; i < 3; i++)
+    {
+        printf("strArray[%d] = %s\n",i,strArray[i]);      //*strArray[i]);  잘못 이해한 부분.
+    }
+
+    for ( i = 0; i<3; i++)
+    {
+        printf("*(pStrArray+%d) = %s\n",i, *(pStrArray+i));
     }
 }

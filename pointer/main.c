@@ -2,7 +2,10 @@
 
 int main()
 {
-    TestArrayDoublePointer();
-    Test2DArrayPointer();
-    Test3DArrayPointer();
+    //TestArrayDoublePointer();
+    //TestArrayPointer();
+    //Test2DArrayPointer();
+    //Test3DArrayPointer();
+    TestStringArrayPointer();
+    TestStringArrayDoublePointer();
 }
